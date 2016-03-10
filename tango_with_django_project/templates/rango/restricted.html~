@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Rango{% endblock %}
+
+{% block body_block %}
+	This is the restricted page.
+{% endblock %}
