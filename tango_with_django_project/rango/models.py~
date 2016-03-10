@@ -5,7 +5,7 @@ class Category(models.Model):
         name = models.CharField(max_length=128, unique=True)
         views = models.IntegerField(default=0)
         likes = models.IntegerField(default=0)
-        slug = models.SlugField()
+        slug = models.SlugField(default="")
 
         def save(self, *args, **kwargs):
                 # Uncomment if you don't want the slug to change every time the name changes
@@ -25,3 +25,11 @@ class Page(models.Model):
 
     def __unicode__(self):      #For Python 2, use __str__ on Python 3
         return self.title
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+  
+    def __unicode__(self):
+        return self.user.username

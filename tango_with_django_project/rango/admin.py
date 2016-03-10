@@ -1,5 +1,7 @@
 from django.contrib import admin
-from rango.models import Category, Page
+from rango.models import Category, Page, UserProfile
+
+admin.site.register(UserProfile)
 
 class PageModel(admin.ModelAdmin):
     list_display = ('category', 'title', 'url')
