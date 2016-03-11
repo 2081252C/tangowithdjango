@@ -69,6 +69,11 @@ LOGIN_URL = '/rango/login/'
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+SESSION_COOKIE_HTTPONLY = True
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
